@@ -142,12 +142,12 @@ const connectDB = require("./config/database");
 const cors = require("cors");
 const customMiddleware = require("./middlewares/customMiddleware");
 
-// Enable CORS
-app.use(cors());
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Enable CORS
+app.use(cors());
 // Custom middleware
 app.use(customMiddleware);
 
