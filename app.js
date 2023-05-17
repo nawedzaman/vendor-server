@@ -139,9 +139,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const vendorRoutes = require("./routes/vendorRoutes");
 const connectDB = require("./config/database");
-
+const cors = require("cors");
 const customMiddleware = require("./middlewares/customMiddleware");
 
+// Enable CORS
+app.use(cors());
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
